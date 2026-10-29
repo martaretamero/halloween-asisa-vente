@@ -1,25 +1,11 @@
-# El fantasma de VENTE — Vercel + Supabase
+# VENTE Halloween — actualización visual
 
-## 1. Supabase
-1. Crea un proyecto en https://supabase.com.
-2. Abre **SQL Editor**, pega `supabase.sql` y ejecútalo.
-3. En **Project Settings → API** (o **Connect**) copia la URL del proyecto y la clave secreta `service_role` (o la clave de servicio compatible). **Nunca pongas esa clave en el HTML ni en GitHub.**
-4. Las respuestas se consultan en **Table Editor → participaciones_vente**; allí puedes exportar CSV.
+Sube **todos los archivos y carpetas** a la raíz del repositorio existente en GitHub, sustituyendo los archivos anteriores. Conserva la estructura `public/assets/`.
 
-## 2. GitHub y Vercel
-1. Sube el contenido de esta carpeta (no la carpeta contenedora) a un repositorio GitHub.
-2. En Vercel, **Add New → Project → Import Git Repository**.
-3. Framework Preset: **Other**. Root Directory: raíz del proyecto. No es necesario un build.
-4. En **Settings → Environment Variables**, crea:
-   - `SUPABASE_URL` = URL del proyecto Supabase.
-   - `SUPABASE_SERVICE_ROLE_KEY` = clave de servicio secreta de Supabase.
-5. Haz **Deploy**. Tras añadir o modificar variables, vuelve a desplegar.
-6. Envía una participación de prueba y verifica la fila en Supabase.
+En Vercel usa Framework **Other**, Root Directory `./` y Output Directory **`.`** (Override activado). Vercel desplegará automáticamente el commit.
 
-## 3. Importante antes de publicar
-- El enlace de «información sobre el tratamiento de datos» es un **marcador pendiente**: sustituye el `href="#"` y elimina el aviso temporal en `script.js` cuando tengas la URL de la política de privacidad y la información legal aprobadas por ASISA. No se debe publicar con el enlace pendiente.
-- Confirma con ASISA la base jurídica, información al participante, plazo de conservación y acceso a los datos. La casilla actual solo confirma lectura; si se necesita consentimiento específico, el texto y el mecanismo deberán revisarse.
-- Los textos visibles de la campaña y preguntas se han reproducido a partir de las capturas aportadas; los mensajes de validación y la casilla legal son añadidos técnicos.
-- Los tres PNG originales se incluyen como archivos separados, sin retocar ni reexportar: `asisa-vente.png`, `vente-halloween.png`, `fantasmas.png`.
-- El formulario no comprueba por sí mismo los leads registrados en otros sistemas ni decide quién cumple el reto: únicamente guarda la respuesta declarada.
-- Para una campaña pública de alto volumen, añadir limitación de frecuencia y protección antispam en el endpoint.
+**Imágenes originales:** `public/assets/asisa-vente.png` es una copia exacta de `Group 161.png`, sin modificaciones. `dientes.png` y `vente.png` también son copias exactas de los archivos proporcionados.
+
+**Base de datos:** el proyecto mantiene `api/submit.js` y `supabase.sql`. Ejecuta `supabase.sql` en Supabase SQL Editor. En Vercel configura `SUPABASE_URL` y `SUPABASE_SERVICE_ROLE_KEY` como variables de entorno privadas y vuelve a desplegar. No pongas claves secretas en GitHub.
+
+**Antes de publicar a participantes:** reemplaza el enlace provisional de privacidad por el aviso de ASISA correspondiente y verifica el consentimiento.
