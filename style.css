@@ -12,3 +12,12 @@
 .thanks .big{font-size:24px}
 .thanks p{font-size:18px}
 @media(max-width:650px){.intro h1,.thanks h1{font-size:30px}.question h2,.thanks h2{font-size:26px}.intro p,.question>p:not(.error),.thanks p{font-size:17px}.question input[type=text],.question textarea{font-size:18px}.choice span{font-size:16px}.thanks .big{font-size:21px}}
+
+/* Nuevos campos de identificación y pantalla de misión */
+.question input[type=email]{display:block;width:100%;border:0;border-bottom:2px solid var(--blue);border-radius:0;background:transparent;color:#fff;font:inherit;font-size:20px;padding:18px 0;outline:none;margin:34px 0 26px}
+.question input[type=email]::placeholder{color:#b3c6df}
+.mission{text-align:center;max-width:850px}
+.mission h2{font-size:clamp(30px,3.2vw,40px);font-weight:800}
+.mission p{font-size:18px;line-height:1.65;margin:24px 0}
+.mission .primary{margin-top:12px}
+@media(max-width:650px){.question input[type=email]{font-size:18px}.mission p{font-size:17px}}
